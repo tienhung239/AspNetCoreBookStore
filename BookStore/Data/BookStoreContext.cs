@@ -22,10 +22,33 @@ namespace BookStore.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
             var book1 = new Book
             {
                 Id = 1,
+                Title = "Đắc nhân tâm",
+                Description = "xoay quanh những vấn đề xây dựng, cải thiện, phát triển mối quan hệ, cách ứng xử giữa người với người.",
+                Language = "Tiếng Việt",
+                DatePublished = DateTime.Parse("1936-10-6"),
+                Price = 99,
+                Author = "Dale Carnegie",
+                ImageUrl = "/images/dacnhantam.jpg"
+            };
+
+            var book8 = new Book
+            {
+                Id = 8,
+                Title = "Nhà giả kim",
+                Description = "là tiểu thuyết được xuất bản lần đầu ở Brasil năm 1988,đã được dịch ra 67 ngôn ngữ và bán tới 95 triệu bản",
+                Language = "Tiếng Việt",
+                DatePublished = DateTime.Parse("2013-1-1"),
+                Price = 129,
+                Author = "Paulo Coelho",
+                ImageUrl = "\\images\\nhagiakim.jpg"
+            };
+
+            var book7 = new Book
+            {
+                Id = 7,
                 Title = "Bröderna Lejonhjärta",
                 Language = "Swedish",
                 DatePublished = DateTime.Parse("2013-9-26"),
@@ -89,7 +112,7 @@ namespace BookStore.Data
                 ImageUrl = "/images/the-road.jpg"
             };
 
-            modelBuilder.Entity<Book>().HasData(book1, book2, book3, book4, book5, book6);
+            modelBuilder.Entity<Book>().HasData(book1, book2, book3, book4, book5, book6,book7,book8);
 
             base.OnModelCreating(modelBuilder);
         }
